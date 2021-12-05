@@ -2,6 +2,7 @@
 - Адвент по CSS - https://www.adventofcss.com
 - Адвент по JS - https://www.adventofjs.com/
 
+## Day 1. Pomodoro Timer
 
 ## Возможности таймера
 - Запуск таймера на кнопку Start
