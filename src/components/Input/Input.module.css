@@ -1,0 +1,36 @@
+.input {
+    padding: 12px 0;
+    margin: 12px 0;
+    width: 160px;
+    height: 196px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px dashed transparent;
+    outline: none;
+
+    font: inherit;
+    line-height: inherit;
+    color: inherit;
+    text-shadow: inherit;
+}
+
+.input:first-of-type {
+    text-align: right;
+}
+
+/* Удаление стрелок */
+/* Chrome, Safari, Edge, Opera */
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.edit {
+  border-color: #ffffff;
+}
