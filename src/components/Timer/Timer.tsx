@@ -96,33 +96,36 @@ const Timer = (): JSX.Element => {
         }
     }
 
+    const validateValue = (evt: any) => {
+        let { value, max } = evt.target;
+        let arr: string[] = value.split('')
+
+        if (value.length > 2) {
+            if (`${arr[1]}${arr[2]}` > max) {
+                arr.pop()
+            } else {
+                arr.shift()
+            }
+        }
+
+        return arr.join('')
+    }
+
     const changeHandler = (evt: InputEvtProps) => {
         if (evt.target.max === "60") {
-            setSeconds('')
-            setSeconds(evt.target.value)
+            setSeconds(validateValue(evt))
             setInitialTime({
                 minutes: minutes,
-                seconds: evt.target.value
+                seconds: seconds
             })
         } else if (evt.target.max === "99") {
-            setMinutes('')
-            setMinutes(evt.target.value)
+            setMinutes(validateValue(evt))
             setInitialTime({
-                minutes: evt.target.value,
+                minutes: validateValue(evt),
                 seconds: seconds
             })
         }
     }
-
-    // const validateValue = (evt: InputEvtProps) => {
-    //     if (evt.target.value.length > 3) {
-    //         const arr = evt.target.value.split('')
-    //         arr[0] = arr[1]
-    //         arr[1] = arr[2]
-    //         arr.pop()
-    //         evt.target.value = arr.join()
-    //     }
-    // }
 
     return (
         <>
